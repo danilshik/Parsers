@@ -1,6 +1,6 @@
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from multiprocessing.dummy import Pool as ThreadPool
-from multiprocessing import Pool
+from concurrent.futures import ThreadPoolExecutor
+# from multiprocessing.dummy import Pool as ThreadPool
+# from multiprocessing import Pool
 import time
 import requests, requests.utils
 import logging
