@@ -1,0 +1,200 @@
+Intel Core i9-7980XE Processor,31120
+Intel Core i9-7960X Processor,28937
+Intel Core i9-7940X Processor,26755
+AMD Ryzen Threadripper 1950X,25133
+Intel Core i9-7920X Processor,24572
+Intel Core i9-9900K Processor,24321
+Intel Core i9-7900X Processor,22390
+AMD Ryzen Threadripper 1920X,22113
+Intel Core i7-6950X Processor,20295
+Intel Core i7-7820X Processor,20208
+AMD Ryzen Threadripper 2950X,20195
+AMD Ryzen Threadripper 2990WX,20195
+AMD Ryzen 7 2700X,19788
+Intel Core i7-8086K Processor,19734
+Intel Core i7-8700K Processor,19414
+AMD Ryzen Threadripper 1900X,19093
+Intel Core i7-8700 Processor,18881
+AMD Ryzen 7 1800X,18492
+AMD Ryzen 7 2700,18335
+Intel Core i7-9700K Processor,18043
+Intel Core i7-7800X Processor,18025
+AMD Ryzen 7 1700X,17876
+Intel Core i7-6900K Processor,17558
+AMD Ryzen 5 2600X,17030
+AMD Ryzen 7 1700,16645
+AMD Ryzen 5 2600,16432
+Intel Core i7-7740X Processor,15843
+Intel Core i7-6850K Processor,15679
+AMD Ryzen 5 1600X,15663
+Intel Core i9-8950HK Processor,14979
+Intel Core i7-6800K Processor,14822
+AMD Ryzen 5 1600,14771
+Intel Xeon Processor E5-2680 v2,14639
+Intel Core i7-8850H Processor,14165
+Intel Core i7-8750H Processor,13923
+Intel Core i7-7700K Processor,13488
+Intel Core i7-5960X Processor,13444
+Intel Core i7-5930K Processor,13422
+Intel Core i7-4960X Processor,13244
+AMD Ryzen 3 2200G,13222
+Intel Core i5-9600K Processor,12932
+Intel Core i5-8600K Processor,12823
+Intel Core i7-3970X Extreme Edition Processor,12767
+Intel Xeon Processor E5-2687W,12747
+Intel Core i7-4930K Processor,12568
+Intel Core i7-5820K Processor,12557
+Intel Core i7-7700 Processor,12324
+Intel Core i7-3960X Extreme Edition Processor,12300
+Intel Core i5-8600 Processor,12277
+Intel Core i5-8500 Processor,12168
+Intel Core i7-6700K Processor,12070
+Intel Core i7-3930K Processor,12066
+Intel Core i5-8400 Processor,11950
+Intel Core i7-8809G Processor,11612
+Intel Xeon Processor E5-1650 v2,11554
+Intel Xeon Processor E5-1650 v3,11124
+Intel Core i7-5775C Processor,11035
+AMD Ryzen 5 2400G,10594
+Intel Core i7-4790K Processor,10527
+AMD Ryzen 5 1500X,10371
+Intel Xeon Processor X5670,10018
+Intel Core i7-7820HK Processor,9988
+Intel Core i7-7700HQ Processor,9925
+Intel Core i7-6700 Processor,9805
+AMD Ryzen 5 1400,9701
+Intel Core i7-4790 Processor,9564
+Intel Xeon Processor E5-1620 v2,9457
+Intel Core i5-8300H Processor,9436
+Intel Core i7-4770K Processor,9282
+Intel Core i7-4771 Processor,9282
+Intel Xeon Processor X5650,9246
+Intel Core i7-4820K Processor,9223
+Intel Xeon Processor E3-1231 v3,9099
+Intel Xeon Processor E5-1620,9088
+Intel Core i7-4770 Processor,9000
+Intel Xeon Processor E3-1230 v3,8859
+Intel Xeon Processor X5680,8776
+Intel Core i3-8350K Processor,8750
+Intel Core i7-3770K Processor,8663
+Intel Core i7-3770 Processor,8357
+Intel Xeon Processor W3680,8331
+Intel Core i7-4770S Processor,8154
+Intel Core i5-7600K Processor,8066
+AMD FX-9590,8040
+Intel Core i7-6820HK Processor,8028
+Intel Xeon Processor E3-1230V2,7979
+Intel Core i7-980X Processor,7910
+Intel Core i7-6700HQ Processor,7794
+Intel Core i3-8100 Processor,7778
+Intel Core i5-7600 Processor,7706
+Intel Xeon Processor E5-1650,7609
+Intel Core i5-7500 Processor,7586
+Intel Core i7-4940MX,7544
+Intel Core i7-3770S Processor,7438
+AMD FX-8370,7284
+AMD FX-8370E,7284
+AMD Ryzen 3 1300X,7231
+AMD FX-8350,7158
+Intel Core i5-8250U Processor,7150
+Intel Core i5-7400 Processor,7107
+Intel Core i5-6600K Processor,7071
+Intel Core i3-7350K Processor,7048
+AMD FX-4300,6906
+AMD Ryzen 3 1200,6745
+Intel Core i7-4810MQ Processor,6733
+Intel Core i5-6600 Processor,6630
+Intel Core i5-7300HQ Processor,6582
+Intel Core i5-4690K Processor,6569
+AMD Phenom II X6 1100T,6559
+AMD FX-8320,6528
+AMD FX-8320E,6528
+Intel Core i3-7100 Processor,6503
+Intel Core i5-4690 Processor,6478
+Intel Core i7-4800MQ Processor,6463
+Intel Core i7-8650U Processor,6453
+Intel Core i5-6500 Processor,6409
+Intel Core i7-8550U Processor,6386
+AMD Phenom II X6 1090T,6352
+AMD Ryzen 5 2500U,6305
+AMD FX-8300,6276
+Intel Core i5-4670K Processor,6263
+Intel Core i5-4670 Processor,6263
+Intel Core i7-3820 Processor,6205
+Intel Core i3-6100 Processor,6193
+Intel Core i7-4720HQ Processor,6193
+AMD FX-8150,6172
+Intel Core i5-3570K Processor,6071
+Intel Core i5-3570 Processor,6071
+Intel Core i5-4590 Processor,6049
+Intel Core i7-4710HQ Processor,5922
+Intel Core i7-4710MQ Processor,5922
+Intel Core i5-3550 Processor,5887
+Intel Core i5-4460 Processor,5835
+Intel Core i5-4570 Processor,5835
+Intel Core i7-3630QM Processor,5708
+Intel Core i5-3470 Processor,5703
+AMD FX-6350,5683
+Intel Xeon Processor E3-1230,5668
+Intel Core i7-4700MQ Processor,5652
+Intel Core i5-4440 Processor,5620
+Intel Xeon E5450,5585
+Intel Core i5-2500K Processor,5536
+Intel Core i5-2500 Processor,5536
+AMD Phenom II X6 1055T,5523
+Intel Core i5-3450 Processor,5519
+AMD FX-8120,5462
+Intel Pentium G4560,5423
+Intel Pentium G4600,5423
+Intel Core i5-4430 Processor,5406
+Intel Xeon Processor X5460,5391
+Intel Core i3-4170 Processor,5367
+Intel Core i5-3330 Processor,5335
+Intel Core i5-6400 Processor,5308
+Intel Core i5-6300HQ Processor,5295
+Intel Core i3-4160 Processor,5220
+Intel Core i7-960 Processor,5218
+AMD FX-6300,5179
+Intel Core i5-2400 Processor,5155
+Intel Core i3-4150 Processor,5073
+Intel Core i7-2700K Processor,5055
+Intel Core i3-4130 Processor,4925
+AMD Phenom II X4 965,4909
+Intel Core 2 Quad Processor Q9650,4904
+Intel Core i7-950 Processor,4886
+Intel Core 2 Extreme Processor QX9650,4864
+Intel Core i7-2600K Processor,4769
+Intel Core i7-2600 Processor,4769
+AMD Phenom II X4 955,4626
+Intel Core i5-760 Processor,4625
+Intel Core 2 Quad Processor Q9550,4614
+Intel Core i5-2300 Processor,4584
+Intel Core i7-870 Processor,4578
+Intel Core i7-7500U Processor,4578
+Intel Core i5-7200U Processor,4459
+Intel Core i5 Processor I5-750,4379
+AMD FX-6100,4358
+AMD Phenom II X4 Processor 945,4344
+Intel Pentium Processor 4415U,4340
+AMD Athlon X4 880K,4328
+Intel Core i7-860 Processor,4269
+Intel Core i7-930 Processor,4269
+AMD Athlon II X4 640,4152
+Intel Core i7-920 Processor,3952
+AMD Athlon X4 860K,3917
+AMD A10-7850K,3910
+AMD A10-5800K,3894
+Intel Pentium G4400,3638
+Intel Core 2 Quad Processor Q6600,3587
+Intel Pentium Processor G3460,3474
+AMD FX-4100,3396
+Intel Pentium G3258,3173
+Intel Celeron G3900,3058
+Intel Core i3-2120 Processor,2780
+Intel Celeron Processor G1840,2777
+Intel Core i3-3220 Processor,2631
+Intel Core i3-2100 Processor,2582
+Intel Celeron Processor G1820,2563
+Intel Core 2 Duo Processor E8400,2400
+Intel Core i5-2320 Processor,2289
+Intel Celeron G3930,0
