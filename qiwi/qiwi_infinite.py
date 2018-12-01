@@ -10,7 +10,7 @@ import json
 import time
 import io
 text_login = "79824665686"
-text_password = "rtyUYT5677^%"   #Пароль
+text_password = ""   #Пароль
 text_login = text_login[1:]
 main_url = "https://qiwi.com/"
 
