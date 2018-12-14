@@ -1,0 +1,216 @@
+# encoding: utf-8
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import *
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.common.keys import Keys
+import time
+import re
+
+last_height = 0
+global_scrolling = True #Включить скроллинг, если хотите отключить, то напишите вместо True  False
+scrolling_px = 1  #На сколько скроллить страницу
+scrolling_time = 0.01  #Через какие промежутки скроллить
+
+filename = "teskit.txt"
+scrolling_process = True
+def load_data(filename):
+    with open(filename, "r") as file:
+        urls = file.read().split("\n")
+    return urls
+
+def scroll(driver, scrolling_px):
+    global last_height, scrolling_process
+    last_height = last_height + scrolling_px
+    scrolling_process = True
+
+
+
+    # Scroll down to bottom
+    text = "window.scrollTo(0," + str(last_height) +");"
+    driver.execute_script(text)
+
+    # new_height = driver.execute_script("return document.body.scrollHeight")
+    # if new_height == last_height:
+    #     scrolling_process = False
+    #     last_height = 0
+
+def init_driver():
+
+    ff = "../install/geckodriver.exe"
+    try:
+        opts = Options()
+        opts.set_preference("browser.link.open_newwindow.restriction", 0)
+
+        opts.set_preference("browser.link.open_newwindow", 1)
+        profile = webdriver.FirefoxProfile('C:\\Users\Danilshik\AppData\Roaming\Mozilla\Firefox\Profiles\oifkhban.selenium')
+
+    except FileNotFoundError:
+        print("Профиль Firefox не найден. Проверьте ссылку")
+        exit(0)
+    try:
+        driver = webdriver.Firefox(executable_path=ff, firefox_profile=profile, firefox_options=opts)
+    except SessionNotCreatedException:
+        print("Ошибка инициализации браузера. Скорее всего у вас не установлен браузер. Пожалуйста обратитесь к разработчику парсера")
+
+    return driver
+
+def parse_time(time_full):
+    global global_scrolling
+    try:
+        hours = int(time_full[-3])
+    except IndexError:
+        hours = 0
+    try:
+        minute = int(time_full[-2])
+    except IndexError:
+        minute = 0
+    second = int(time_full[-1])
+
+    sleep = hours * 3600 + minute * 60 + second
+    print("Время задержки:", sleep)
+    return sleep
+
+def parse_youtube(driver, referrer, url, page_sleep, time_sleep_before, time_sleep_after):
+    global last_height,scrolling_time
+    last_height = 0
+    print("Переход на страницу:", url)
+    if(referrer == False):
+        try:
+            driver.get(url)
+        except WebDriverException as e:
+            print("Ошибка запроса страница. Возможно страница недоступна")
+    else:
+
+        driver.switch_to_window(driver.window_handles[0])
+
+    if (url.find("youtube") != -1):
+        try:
+            error = driver.find_element_by_css_selector('div.reason.style-scope.yt-player-error-message-renderer')
+        except NoSuchElementException:
+            print("Элемент недоступности видео не найдено. Продолжаем")
+    for i in range(time_sleep_before):
+        print("Ожидание до скроллинга страницы: " + str(time_sleep_before) + " c. Осталось " + str(time_sleep_before - i))
+        time.sleep(1)
+    start_scroll_time = time.time()
+    global scrolling_px
+    while True:
+        print("Ожидание Прокрутки и воспроизведение видео. Осталось:", page_sleep - (time.time() - start_scroll_time))
+        if(global_scrolling):
+            if(scrolling_process):
+                scroll(driver, scrolling_px)
+        time.sleep(scrolling_time)
+        if(time.time() - start_scroll_time > page_sleep):
+            break
+
+def vk_parse(driver, vk_url, url, page_sleep, time_sleep_before, time_sleep_after):
+    global global_scrolling
+    driver.get(vk_url)
+    scroll_vk = True
+    a_list = driver.find_elements_by_css_selector('a')
+    for a in a_list:
+        a_text = a.text
+        print(a_text)
+        if (a_text.find("Показать полностью") != -1):
+            a.click()
+        text = re.search("..$", a_text)
+        if (text != None):
+            a_text = a.get_attribute('title')
+
+
+        if a_text == url:
+            scroll_vk = False
+            referrer = True
+            first_window = driver.window_handles[0]
+            a.click()
+
+            # second_windows = driver.window_handles[1]
+            # driver.switch_to_window(second_windows)
+            parse_youtube(driver, referrer, url, page_sleep, time_sleep_before, time_sleep_after)
+            # driver.close()
+            # driver.switch_to_window(first_window)
+            return
+
+
+    if(global_scrolling):
+        for i in range(time_sleep_before):
+            print("Ожидание до скроллинга страницы: " + str(time_sleep_before) + " c. Осталось " + str(time_sleep_before - i))
+            time.sleep(1)
+
+
+
+        time_vk = time.time()
+        while scroll_vk:
+            a_list = driver.find_elements_by_css_selector('a')
+            for a in a_list:
+                try:
+                    a_text = a.text
+                except:
+                    continue
+
+
+                if a_text == url:
+                    scroll_vk = False
+                    referrer = True
+                    # first_window = driver.window_handles[0]
+                    a.click()
+                    # driver.switch_to_window(second_windows)
+                    parse_youtube(driver, referrer, url, page_sleep, time_sleep_before, time_sleep_after)
+                    # driver.close()
+                    # driver.switch_to_window(first_window)
+                    return
+            scroll(driver, 1000)
+            if(300 < (time.time() - time_vk)):
+                scroll_vk = False
+                print("Ссылка не найдена")
+
+
+
+        for i in range(time_sleep_after):
+            print("Ожидание после скроллинга страницы: " + str(time_sleep_after) + " c. Осталось " + str(time_sleep_after - i))
+            time.sleep(1)
+    else:
+        print("Скроллинг отключен. Переход к следующей ссылки в текстовом документе")
+
+
+def main():
+    print("Запуск браузера")
+    driver = init_driver()
+    print("Открытие текстового файла")
+    items = load_data(filename)
+    for item in items:
+        try:
+            item_block = item.split(";")
+            print(item_block[1])
+        except IndexError:
+            continue
+        if(item_block[1].find("http") != -1):
+            vk_url = item_block[0]
+            url = item_block[1]
+            time_sleep_before = int(item_block[2])
+            page_sleep = parse_time(item_block[3].split(":"))
+            time_sleep_after = int(item_block[4])
+            vk_parse(driver, vk_url, url, page_sleep, time_sleep_before, time_sleep_after)
+        else:
+            url = item_block[0]
+            time_sleep_before = int(item_block[1])
+            page_sleep = parse_time(item_block[2].split(":"))
+            time_sleep_after = int(item_block[3])
+            referrer = False
+            parse_youtube(driver, referrer, url, page_sleep, time_sleep_before, time_sleep_after)
+
+
+
+    driver.close()
+    print("Ссылки закончились. Закрытие браузера. Конец программы")
+
+
+if __name__ == '__main__':
+    start_time = time.time()
+    main()
+    print("Время выполнения скрипта:", time.time() - start_time)
